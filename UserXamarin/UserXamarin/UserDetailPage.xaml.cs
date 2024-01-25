@@ -21,9 +21,10 @@ namespace UserXamarin
                 this.Navigation.PopModalAsync();
             };
 
-            //nameLabel.Text = "Anirudha Mahale";
-            //profileImage.Source = "https://reqres.in/img/faces/1-image.jpg";
-            //emailLabel.Text = "george.bluth@reqres.in";
+            nameLabel.Text = "Anirudha Mahale";
+            profileImage.Source = "https://reqres.in/img/faces/1-image.jpg";
+            emailLabel.Text = "george.bluth@reqres.in";
+
         }
     }
 }
