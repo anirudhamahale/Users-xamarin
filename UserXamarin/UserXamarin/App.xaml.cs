@@ -1,4 +1,5 @@
 ﻿using System;
+using UserXamarin.Utilities;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,14 +16,17 @@ namespace UserXamarin
 
         protected override void OnStart ()
         {
+            ApplicationCounter.Instance.increment();
         }
 
         protected override void OnSleep ()
         {
+
         }
 
         protected override void OnResume ()
         {
+            ApplicationCounter.Instance.increment();
         }
     }
 }
