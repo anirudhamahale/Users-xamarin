@@ -10,8 +10,8 @@
         <AbsoluteLayout>
             <Button Text="Close" x:Name="closeButton" AbsoluteLayout.LayoutBounds="1,0,-1,-1" AbsoluteLayout.LayoutFlags="XProportional" Margin="0,0,10,0"/>
             <StackLayout BackgroundColor="White"
-                     AbsoluteLayout.LayoutBounds="0.5,0.5,0.8,-1"
-                     AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" Spacing="16">
+                     AbsoluteLayout.LayoutBounds="0.5,0.5,1,-1"
+                     AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" Spacing="16" Margin="16,0,16,0">
                 <BoxView HeightRequest="16"/>
                 <Frame WidthRequest="160" HeightRequest="160" CornerRadius="80" HasShadow="False" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
                     <Image x:Name="profileImage" />
