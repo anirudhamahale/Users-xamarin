@@ -6,28 +6,17 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
     ios:Page.UseSafeArea="true" BackgroundColor="LightGray">
 
-    <!--<ContentPage.Content>
-        <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Label x:Name="nameLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
-        </AbsoluteLayout>
-    </ContentPage.Content>-->
-
     <ContentPage.Content>
         <AbsoluteLayout>
-            <Button Text="Close" x:Name="closeButton" AbsoluteLayout.LayoutBounds="0.95,0.0,-1,-1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Button Text="Close" x:Name="closeButton" AbsoluteLayout.LayoutBounds="1,0,-1,-1" AbsoluteLayout.LayoutFlags="XProportional" Margin="0,0,10,0"/>
             <StackLayout BackgroundColor="White"
                      AbsoluteLayout.LayoutBounds="0.5,0.5,0.8,-1"
                      AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" Spacing="16">
                 <BoxView HeightRequest="16"/>
-                <Image x:Name="profileImage" HeightRequest="160" WidthRequest="160">
-                    <Image.Clip>
-                        <EllipseGeometry
-                            Center="157,80"
-                            RadiusX="80"
-                            RadiusY="80"/>
-                    </Image.Clip>
-                </Image>
-                <Label TextColor="Black" x:Name="nameLabel" FontSize="Medium" HorizontalTextAlignment="Center"/>
+                <Frame WidthRequest="160" HeightRequest="160" CornerRadius="80" HasShadow="False" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
+                    <Image x:Name="profileImage" />
+                </Frame>
+                <Label TextColor="Black" x:Name="nameLabel" FontSize="Title" HorizontalTextAlignment="Center"/>
                 <Label TextColor="Black" x:Name="emailLabel" FontSize="Small" HorizontalTextAlignment="Center"/>
                 <BoxView HeightRequest="16"/>
             </StackLayout>
