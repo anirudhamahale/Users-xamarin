@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UserXamarin.Models;
 using Xamarin.Forms;
@@ -18,17 +14,13 @@ namespace UserXamarin
         public MainPage()
         {
             InitializeComponent();
-
-            //List<User> myList = new List<User>
-            //{
-            //    new User {first_name="Anirudha", avatar="https://reqres.in/img/faces/1-image.jpg" },
-            //    new User {first_name="Lucifer", avatar="https://reqres.in/img/faces/1-image.jpg" },
-            //    new User {first_name="Zoro", avatar="https://reqres.in/img/faces/1-image.jpg" },
-            //};
-
-            // userListView.ItemsSource = myList;
-
             getUsers();
+
+            userListView.ItemTapped += async (o, e) => {
+                User user = e.Item as User;
+                // await DisplayAlert(title: "I am clicked", message: user.full_name, cancel: "Cancel");
+                await pushDetailPage(user);
+            };
 
         }
 
@@ -38,6 +30,10 @@ namespace UserXamarin
 
             userListView.ItemsSource = myList;
 
+        }
+
+        async Task pushDetailPage(User user) {
+            await this.Navigation.PushModalAsync(new UserDetailPage(user));
         }
     }
 }

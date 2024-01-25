@@ -6,7 +6,7 @@
             ios:Page.UseSafeArea="true">
 
     <Frame CornerRadius="16" IsClippedToBounds = "False" HasShadow="False" Margin="16">
-    <ListView x:Name="userListView" RowHeight="116" BackgroundColor="White">
+    <ListView x:Name="userListView" RowHeight="116" BackgroundColor="White" VerticalScrollBarVisibility="Never">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
