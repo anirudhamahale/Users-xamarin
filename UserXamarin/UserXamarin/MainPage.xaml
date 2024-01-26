@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="UserXamarin.MainPage" BackgroundColor="LightGray"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-            ios:Page.UseSafeArea="true">
-
-    <Frame CornerRadius="16" IsClippedToBounds = "False" HasShadow="False" Margin="16">
-    <ListView x:Name="userListView" RowHeight="116" BackgroundColor="White" VerticalScrollBarVisibility="Never">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="UserXamarin.MainPage" BackgroundColor="LightGray"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+            ios:Page.UseSafeArea="true"
+            xmlns:viewModels="clr-namespace:UserXamarin.ViewModels">
+    <ContentPage.BindingContext>
+        <viewModels:UserListViewModel/>
+    </ContentPage.BindingContext>
+    <Frame CornerRadius="16" IsClippedToBounds = "False" HasShadow="False" Margin="16" BackgroundColor="{Binding shouldShow}">
+    <ListView x:Name="userListView" RowHeight="116" BackgroundColor="White" VerticalScrollBarVisibility="Never" ItemsSource="{Binding users}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

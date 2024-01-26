@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UserXamarin.Models;
+using UserXamarin.ViewModels;
 using Xamarin.Forms;
 
 namespace UserXamarin
@@ -8,7 +9,7 @@ namespace UserXamarin
     public partial class MainPage : ContentPage
     {
 
-        services.IUserService userService = DependencyService.Get<services.IUserService>();
+        
         List<User> myList;
 
         public MainPage()
@@ -25,11 +26,7 @@ namespace UserXamarin
         }
 
         public async void getUsers() {
-            var result = await userService.getUsers(page: 1);
-            myList = result.data;
-
-            userListView.ItemsSource = myList;
-
+            await (BindingContext as UserListViewModel).loadDataAsync();
         }
 
         async Task pushDetailPage(User user) {
